@@ -178,6 +178,8 @@ module.exports = function(webpackEnv) {
               .replace(/\\/g, '/')
         : isEnvDevelopment &&
           (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
+      // Support For Web Worker | @ri7nz
+      globalObject: 'self',
     },
     optimization: {
       minimize: isEnvProduction,
